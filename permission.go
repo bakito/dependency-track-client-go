@@ -41,3 +41,12 @@ func (ps PermissionService) AddPermissionToTeam(ctx context.Context, permission 
 	_, err = ps.client.doRequest(req, &t)
 	return
 }
+func (ps PermissionService) RemovePermissionFromTeam(ctx context.Context, permission Permission, team uuid.UUID) (t Team, err error) {
+	req, err := ps.client.newRequest(ctx, http.MethodDelete, fmt.Sprintf("/api/v1/permission/%s/team/%s", permission.Name, team.String()))
+	if err != nil {
+		return
+	}
+
+	_, err = ps.client.doRequest(req, &t)
+	return
+}

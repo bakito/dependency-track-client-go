@@ -19,8 +19,8 @@ type OIDCGroup struct {
 }
 
 type OIDCMappingRequest struct {
-	Team  string `json:"team"`
-	Group string `json:"group"`
+	Team  uuid.UUID `json:"team"`
+	Group uuid.UUID `json:"group"`
 }
 
 type OIDCMapping struct {
@@ -78,8 +78,8 @@ func (s OIDCService) UpdateGroup(ctx context.Context, group OIDCGroup) (g OIDCGr
 	return
 }
 
-func (s OIDCService) DeleteGroup(ctx context.Context, id string) (err error) {
-	req, err := s.client.newRequest(ctx, http.MethodDelete, fmt.Sprintf("/api/v1/oidc/group/%s", id))
+func (s OIDCService) DeleteGroup(ctx context.Context, groupUUID uuid.UUID) (err error) {
+	req, err := s.client.newRequest(ctx, http.MethodDelete, fmt.Sprintf("/api/v1/oidc/group/%s", groupUUID.String()))
 	if err != nil {
 		return
 	}
@@ -113,8 +113,8 @@ func (s OIDCService) AddTeamMapping(ctx context.Context, mapping OIDCMappingRequ
 	return
 }
 
-func (s OIDCService) RemoveTeamMapping(ctx context.Context, mappingID string) (err error) {
-	req, err := s.client.newRequest(ctx, http.MethodDelete, fmt.Sprintf("/api/v1/oidc/mapping/%s", mappingID))
+func (s OIDCService) RemoveTeamMapping(ctx context.Context, mappingID uuid.UUID) (err error) {
+	req, err := s.client.newRequest(ctx, http.MethodDelete, fmt.Sprintf("/api/v1/oidc/mapping/%s", mappingID.String()))
 	if err != nil {
 		return
 	}
