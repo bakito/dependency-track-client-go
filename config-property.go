@@ -17,7 +17,7 @@ type ConfigPropertyService struct {
 	client *Client
 }
 
-func (s ConfigPropertyService) GetAllConfigProperty(ctx context.Context, po PageOptions) (p Page[ConfigProperty], err error) {
+func (s ConfigPropertyService) GetAllConfigProperties(ctx context.Context, po PageOptions) (p Page[ConfigProperty], err error) {
 	req, err := s.client.newRequest(ctx, http.MethodGet, "/api/v1/configProperty", withPageOptions(po))
 	if err != nil {
 		return
