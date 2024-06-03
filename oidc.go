@@ -68,6 +68,7 @@ func (s OIDCService) CreateGroup(ctx context.Context, name string) (g OIDCGroup,
 	_, err = s.client.doRequest(req, &g)
 	return
 }
+
 func (s OIDCService) UpdateGroup(ctx context.Context, group OIDCGroup) (g OIDCGroup, err error) {
 	req, err := s.client.newRequest(ctx, http.MethodPost, "/api/v1/oidc/group", withBody(group))
 	if err != nil {

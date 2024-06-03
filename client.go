@@ -37,6 +37,7 @@ type Client struct {
 	Analysis          AnalysisService
 	BOM               BOMService
 	Component         ComponentService
+	ConfigProperty    ConfigPropertyService
 	Finding           FindingService
 	License           LicenseService
 	Metrics           MetricsService
@@ -84,6 +85,7 @@ func NewClient(baseURL string, options ...ClientOption) (*Client, error) {
 	client.Analysis = AnalysisService{client: &client}
 	client.BOM = BOMService{client: &client}
 	client.Component = ComponentService{client: &client}
+	client.ConfigProperty = ConfigPropertyService{client: &client}
 	client.Finding = FindingService{client: &client}
 	client.License = LicenseService{client: &client}
 	client.Metrics = MetricsService{client: &client}
