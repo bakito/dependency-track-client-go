@@ -5,7 +5,7 @@ go 1.24.1
 require (
 	github.com/google/go-cmp v0.7.0
 	github.com/google/uuid v1.3.0
-	github.com/jarcoal/httpmock v1.3.0
+	github.com/jarcoal/httpmock v1.4.0
 	github.com/stretchr/testify v1.10.0
 )
 
