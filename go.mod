@@ -7,7 +7,7 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/stretchr/testify v1.8.4
 	github.com/testcontainers/testcontainers-go v0.22.0
-	golang.org/x/mod v0.20.0
+	golang.org/x/mod v0.24.0
 )
 
 require (
