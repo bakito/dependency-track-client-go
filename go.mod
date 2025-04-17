@@ -3,7 +3,7 @@ module github.com/DependencyTrack/client-go
 go 1.19
 
 require (
-	github.com/google/go-cmp v0.5.9
+	github.com/google/go-cmp v0.7.0
 	github.com/google/uuid v1.3.0
 	github.com/stretchr/testify v1.8.4
 	github.com/testcontainers/testcontainers-go v0.22.0
